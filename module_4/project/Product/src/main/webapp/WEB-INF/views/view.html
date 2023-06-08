@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a th:href="@{/product}">Quay lại</a></h2>
+  <table border="1px">
+    <tr>
+      <td>Id</td>
+      <td>Tên Sản Phẩm</td>
+      <td>Giá Sản Phẩm</td>
+      <td>Mô Tả</td>
+      <td>Nhà Sản Xuất</td>
+    </tr>
+
+    <tr>
+    <td th:text="${products.id}" ></td>
+    <td th:text="${products.nameProduct}"></td>
+    <td th:text="${products.price}"></td>
+    <td th:text="${products.describe}"></td>
+    <td th:text="${products.producer}"></td>
+    </tr>
+  </table>
+</body>
+</html>

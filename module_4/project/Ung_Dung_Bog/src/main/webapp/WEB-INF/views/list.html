@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh Sách Bog</h1>
+<h3><a th:href="@{/create}">Add Bog</a></h3>
+<table border="1px">
+    <tr>
+        <td>Title</td>
+        <td>Description</td>
+    </tr>
+    <th:block th:each=" row : ${bogs}">
+        <tr>
+        <td th:text="${row.getTitle()}"></td>
+        <td th:text="${row.getDescription()}"></td>
+        <td><a th:href="@{/edit/__${row.id}__}">Edit</a></td>
+        <td><a th:href="@{/view/__${row.id}__}">View</a></td>
+        <td><a th:href="@{/delete/__${row.id}__}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Created Date</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${posts}">
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getTitle()}"></td>
+        <td th:text="${row.getContent()}"></td>
+        <td th:text="${row.getCreated_date()}"></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

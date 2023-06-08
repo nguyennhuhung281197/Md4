@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <td>Title</td>
+        <td>Description</td>
+    </tr>
+    <tr>
+        <td th:text="${view.title}"></td>
+        <td th:text="${view.description}"></td>
+    </tr>
+</table>
+</body>
+</html>

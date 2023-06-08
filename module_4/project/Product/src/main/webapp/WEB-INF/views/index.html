@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a th:href="@{/product/create}">Thêm Sản Phẩm</a></h2>
+<h2>Danh Sách Sản Phẩm</h2>
+<h3><span style="color: red" th:text="${resultDelete}"></span></h3>
+<h3><span style="color: red" th:text="${resultEdit}"></span></h3>
+
+<form th:action="@{/product/search}" method="get">
+    <input type="text" name="name" placeholder="Enter keyword">
+    <input type="submit" value="search">
+</form>
+<table border="1px">
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Tên Sản Phẩm</td>
+        <td>Giá Sản Phẩm</td>
+        <td>Mô Tả</td>
+        <td>Nhà Sản Xuất</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${products}">
+        <td th:text="${row.getId()}"></td>
+        <td th:text="${row.getNameProduct()}"></td>
+        <td th:text="${row.getPrice()}"></td>
+        <td th:text="${row.getDescribe()}"></td>
+        <td th:text="${row.getProducer()}"></td>
+        <td><a th:href="@{/product/{id}/edit(id=${row.getId()})}">Edit</a></td>
+        <td><a th:href="@{/product/{id}/delete(id=${row.getId()})}">Delete</a></td>
+        <td><a th:href="@{/product/{id}/view(id=${row.getId()})}">View</a></td>
+    </tr>
+    </tbody>
+
+
+</table>
+</body>
+</html>

@@ -1,0 +1,31 @@
+    <!DOCTYPE html>
+    <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Page</title>
+    </head>
+    <body>
+    <form th:action="@{/option/result}" method="post">
+    <label><b>Languages :</b></label>
+    <select name="a">
+        <option th:each="option : ${options}" th:text="${option}"></option>
+    </select>
+    <br>
+    <br>
+    <label><b>Page Size : </b></label>
+            <select name="b">
+                <option th:each="sizeOption : ${sizeOptions}" th:text="${sizeOption}"></option>
+            </select>
+    <label><b>email per page</b></label>
+    <br>
+    <br>
+    <label><b> Spams filter </b></label>
+    <input type="checkbox" name="c" value="Enable spams filter"> Enable spams filter
+        <br>
+        <label><b>Signature</b></label>
+            <textarea  name="signature"></textarea>
+        <br>
+        <input type="submit" value="Result">
+    </form>
+    </body>
+    </html>

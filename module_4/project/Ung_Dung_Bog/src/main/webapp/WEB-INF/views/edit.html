@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4><a th:href="@{/bog}">Black Edit</a></h4>
+<form th:action="@{/update}" th:object="${bogs}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <label>Title</label>
+    <input type="text" th:field="*{title}">
+    <br>
+    <label>Description</label>
+    <input type="text" th:field="*{description}">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
